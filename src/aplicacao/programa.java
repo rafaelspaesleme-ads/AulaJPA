@@ -1,18 +1,30 @@
 package aplicacao;
 
-import dominio.Pessoa;
+import javax.swing.JOptionPane;
+
 
 public class programa {
 
 	public static void main(String[] args) {
+
+		Integer i = Integer.parseInt(JOptionPane.showInputDialog("1- CADASTRO\n2- EXIBIR\n3- EXCLUIR"));
 		
-		Pessoa p1 = new Pessoa(1, "Ana Caroline", "carolinerufino.adv@gmail.com");
-		Pessoa p2 = new Pessoa(2, "Rafael", "rafaels.paesleme@hotmail.com");
-		Pessoa p3 = new Pessoa(3, "Joaquina", "joaquina@yahoo.com");
+		if(i == 1) {
+			cadastroJPA cadJPA = new cadastroJPA();
+			cadJPA.main(args);
+		}
+		else if (i == 2) {
+			exibeJPA exibJPA = new exibeJPA();
+			exibJPA.main(args);
+		}
+		else if (i == 3) {
+			excluiJPA excJPA = new excluiJPA();
+			excJPA.main(args);
+		}
+		else {
+			System.out.println("Erro!");
+		}
 		
-		System.out.println(p1);
-		System.out.println(p2);
-		System.out.println(p3);
 	}
 	
 }
